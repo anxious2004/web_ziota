@@ -20,3 +20,4 @@ function navigate(specialization) {
         window.location.href = `${specialization}.html`;
     }, 500);
 }
+
