@@ -4,6 +4,25 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/Users"); // Make sure 'Users.js' exists
 const router = express.Router();
 
+const admin = require("../config/firebaseAdmin");
+const authenticateUser = async (req, res, next) => {
+    const token = req.headers.authorization?.split("Bearer ")[1];
+
+    if (!token) {
+        return res.status(401).json({ error: "Unauthorized: No token provided" });
+    }
+
+    try {
+        const decodedToken = await admin.auth().verifyIdToken(token);
+        req.user = decodedToken; // Attach user data to request
+        next();
+    } catch (error) {
+        res.status(401).json({ error: "Unauthorized: Invalid token" });
+    }
+};
+
+module.exports = authenticateUser;
+
 // Register
 router.post("/register", async (req, res) => {
     try {
