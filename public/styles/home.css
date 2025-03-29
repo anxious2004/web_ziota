@@ -985,5 +985,34 @@ font-size: 0.9rem;
     grid-template-columns: 1fr;
 }
 }
+.oauth-login {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.oauth-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    margin: 5px auto;
+}
+
+.google-btn {
+    background-color: #DB4437;
+}
+
+.github-btn {
+    background-color: #333;
+}
+
+.oauth-btn i {
+    margin-right: 10px;
+}
 
         
