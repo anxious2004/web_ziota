@@ -7,6 +7,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles/home.css">
+<meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin-allow-popups">
+<meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
+
+
 </head>
 <body>
     <!-- Header -->
@@ -76,39 +80,54 @@
             <p class="feature-description">Create customized study schedules based on your exam dates, prioritize topics, and track your progress with our intuitive planner.</p>
         </div>
     </section>
+    <!-- Authentication Section -->
+    <section class="auth-section" id="auth">
+        <div class="form-wrapper" id="formWrapper">
+            <h2 class="form-title">Welcome to Ziota!</h2>
 
-<!-- Authentication Section -->
-<section class="auth-section" id="auth">
-    <div class="form-wrapper" id="formWrapper">
-        <h2 class="form-title">Welcome to Ziota!</h2>
+            <div class="access-buttons">
+                <!-- Personal Access Option -->
+                <button class="access-btn personal-btn" id="personalAccess">Personal Access</button>
+                
+                <!-- General Access Option -->
+                <button class="access-btn general-btn" id="generalAccess">General Access</button>
+            </div>
 
-        <div class="access-buttons">
-            <button class="access-btn personal-btn" id="personalAccess">Personal Access</button>
-            <button class="access-btn general-btn" id="generalAccess">General Access</button>
+            <!-- Authentication Options (Login/Register) -->
+            <div id="authOptions" style="display: none;">
+                <button id="loginOption" class="auth-btn">Login</button>
+                <button id="registerOption" class="auth-btn">Register</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="authForm" style="display: none;">
+                <h3>Login</h3>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+                <p>Or</p>
+                <button id="googleLogin">Login with Google</button>
+                <p>New user? <a href="#" id="showRegister">Register Here</a></p>
+            </form>
+
+            <!-- Registration Form -->
+            <form id="registerForm" style="display: none;">
+                <h3>Register</h3>
+                <input type="text" id="regUsername" placeholder="Username" required>
+                <input type="email" id="regEmail" placeholder="Email" required>
+                <input type="password" id="regPassword" placeholder="Password" required>
+                <button type="submit">Register</button>
+                <p>Already have an account? <a href="#" id="showLogin">Login Here</a></p>
+            </form>
+
+            <!-- Sign Out Button (Initially Hidden) -->
+            <button id="signOutBtn" style="display: none;">Sign Out</button>
+
+            <!-- Authentication Message -->
+            <p id="authMessage"></p>
         </div>
+    </section>
 
-        <!-- Login Form (Initially Hidden) -->
-        <form id="authForm" style="display: none;">
-            <input type="text" id="username" placeholder="Username" required>
-            <input type="password" id="password" placeholder="Password" required>
-            <input type="email" id="email" placeholder="Email" required>
-            <button type="submit">Login</button>
-            <p id="registerOption" style="display: none;">
-                New user? <a href="#" id="registerLink">Create an Account</a>
-            </p>
-        </form>
-
-        <!-- Registration Form (Initially Hidden) -->
-        <form id="registerForm" style="display: none;">
-            <input type="text" id="regUsername" placeholder="Username" required>
-            <input type="email" id="regEmail" placeholder="Email" required>
-            <input type="password" id="regPassword" placeholder="Password" required>
-            <button type="submit">Register</button>
-        </form>
-
-        <p id="authMessage"></p>
-    </div>
-</section>
 
 
     <!-- Testimonials Section -->
@@ -217,7 +236,13 @@
             <p>&copy; 2025 Ziota - Empowering Education & Innovation. All rights reserved.</p>
         </div>
     </footer>
-    <script src="scripts/home.js"></script>
+    <!-- Firebase SDK -->
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js"></script>
+
+    <!-- Custom Scripts -->
+    <script type="module" src="scripts/firebase-config.js"></script>
+    <script type="module" src="scripts/home.js"></script>
 
 </body>
 </html>
