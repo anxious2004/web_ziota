@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #1e1e1e;
+    color: white;
+}
+
+h1 {
+    font-size: 28px;
+    margin-top: 20px;
+}
+
+input, button {
+    margin: 10px;
+    padding: 8px 12px;
+    font-size: 16px;
+}
+
+.uploaded-file {
+    display: flex;
+    justify-content: space-between;
+    background: #333;
+    padding: 8px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.uploaded-file a {
+    color: #58a6ff;
+    text-decoration: none;
+}
+
+.uploaded-file button {
+    background: red;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
